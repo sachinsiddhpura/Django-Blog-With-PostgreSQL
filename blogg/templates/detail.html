@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+<html>
+<head>
+  <title>
+    {{posts.title}}
+  </title>
+</head>
+
+<body>
+<div class="jumbotron">
+ 	Your Title Is: <h1>{{ posts.title }}</h1>
+  <br/>
+  Your Body Is: <p>{{ posts.body }}</p>
+
+  <form action="/update/{{posts.id}}">
+   <input class="btn btn-primary" type="submit" value="Update"/>
+  </form>
+  </br>
+  <form action="/delete/{{posts.id}}">
+  	<input class="btn btn-danger" type="submit" value="Delete">
+  </form>
+</div>
+</body>
+{% endblock %}
